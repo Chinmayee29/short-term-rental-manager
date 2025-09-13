@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api"; // correct base URL
+const API_URL = "http://localhost:3000"; // change this to your deployed backend URL later
 
 let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 
