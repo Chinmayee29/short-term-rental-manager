@@ -1,11 +1,14 @@
 # Use Nginx to serve static frontend
 FROM nginx:alpine
 
-# Copy all frontend files into nginx public folder
+# Copy frontend files
 COPY . /usr/share/nginx/html
 
-# Expose nginx default port
-EXPOSE 80
+# Replace default nginx.conf with one that uses $PORT
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose the default port (optional)
+EXPOSE 8080
 
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]
